@@ -13,7 +13,7 @@ export class TabsComponent {
   @Input() activeIndex: number = 0;
   @Output() onIndexChange: EventEmitter<number> = new EventEmitter<number>();
 
-  setActiveTab(index: number) {
+  setActiveIndex(index: number) {
     this.onIndexChange.emit(index);
   }
 }

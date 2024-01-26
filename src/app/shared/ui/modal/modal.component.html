@@ -1,0 +1,14 @@
+<div
+  class="modal-overlay"
+  *ngIf="showModal"
+  (click)="handleClose()"
+>
+  <div class="modal" (click)="stopPropagation($event)">
+    <div class="modal-header">
+      <span (click)="handleClose()" class="close-button">&times;</span>
+    </div>
+    <div class="modal-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

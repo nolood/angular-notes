@@ -1,0 +1,13 @@
+
+<ul class="list">
+  <li>
+    <h2 class="list-title" *ngIf="!getTags().length">У вас нет тэгов</h2>
+  </li>
+  <li
+    class="list-item"
+    *ngFor="let tag of getTags()"
+  >
+    <p>{{ tag.title }}</p>
+    <app-button (click)="deleteTag(tag.id)">Удалить</app-button>
+  </li>
+</ul>

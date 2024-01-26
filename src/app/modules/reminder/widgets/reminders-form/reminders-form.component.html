@@ -1,0 +1,17 @@
+<form class="form" (submit)="addReminder($event)">
+  <div>
+    <p>Выберите заметку</p>
+    <select [(ngModel)]="noteId" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let option of notes" [value]="option.value">{{ option.label }}</option>
+    </select>
+  </div>
+
+  <!-- Это будет работать как надо, только в chrome и может быть ещё где-то) -->
+  <div>
+    <p>Выберите дату и время</p>
+    <input [value]="dateTime" (change)="setDateTime($event)" type="datetime-local">
+  </div>
+
+
+  <app-button type="submit">Создать</app-button>
+</form>

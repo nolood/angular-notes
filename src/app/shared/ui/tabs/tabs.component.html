@@ -1,7 +1,8 @@
 <div>
   <ul class="list">
     <li
-      (click)="setActiveTab(i)"
+      tabindex="1"
+      (click)="setActiveIndex(i)"
       [ngClass]="{ 'list-item': true, 'active': i === activeIndex }"
       *ngFor="let item of tabs; index as i"
     >

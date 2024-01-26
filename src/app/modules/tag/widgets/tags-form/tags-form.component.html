@@ -1,0 +1,9 @@
+<form class="form" (ngSubmit)="addTag()">
+  <app-text-field
+    [value]="title"
+    (onChange)="setTitle($event)"
+    label="Название"
+    name="title"
+  ></app-text-field>
+  <app-button type="submit">Создать</app-button>
+</form>

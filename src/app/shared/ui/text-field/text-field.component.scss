@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.text-field {
+  padding: 10px 20px;
+  width: 100%;
+  outline: 1px solid $accent;
+  border: none;
+  font-size: 20px;
+  color: $accent;
+  &:focus {
+    outline: 2px solid $accent;
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: $accent;
+  font-weight: 500;
+}

@@ -1,1 +1,63 @@
-<p>notes-list works!</p>
+
+<!-- Возможно стоит подумать над тем, чтобы вынести это в отдельный компонент -->
+<app-modal
+  [showModal]="isModalVisible"
+  (closeModal)="closeModal()"
+>
+<!--  Изменить -->
+  <div *ngIf="modalEvent === 'edit'">
+    <h2
+      class="modal-title"
+    >
+      Редактировать
+    </h2>
+    <div class="modal-content">
+      <app-text-field
+        [value]="newNoteTitle"
+        (onChange)="setNewNoteTitle($event)"
+      ></app-text-field>
+      <app-text-field
+        [value]="newNoteDescription"
+        (onChange)="setNewNoteDescription($event)"
+      ></app-text-field>
+    </div>
+    <div class="modal-controls">
+      <app-button (click)="closeModal()">Отмена</app-button>
+      <app-button
+        (click)="editNote()"
+      >Сохранить</app-button>
+    </div>
+  </div>
+<!--  Удалить -->
+  <div *ngIf="modalEvent === 'delete'">
+    <h2
+      class="modal-title"
+    >
+      Вы точно хотите удалить {{ activeNote?.title }}?
+    </h2>
+    <div class="modal-controls">
+      <app-button (click)="closeModal()">Отмена</app-button>
+      <app-button
+        (click)="deleteNote(activeNote?.id)"
+      >Удалить</app-button>
+    </div>
+  </div>
+</app-modal>
+
+<ul class="list">
+  <li>
+    <h2 class="list-title" *ngIf="!getNotes().length">У вас нет заметок</h2>
+  </li>
+  <li
+    class="list-item"
+    *ngFor="let note of getNotes()"
+  >
+    <p class="title">{{ note.title }}</p>
+    <p class="description">{{ note.description }}</p>
+    <div></div>
+    <div class="controls">
+      <app-button (click)="editNoteModal(note)" >Редактировать</app-button>
+      <app-button (click)="deleteNoteModal(note)">Удалить</app-button>
+    </div>
+  </li>
+</ul>

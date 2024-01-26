@@ -1,0 +1,13 @@
+<ul class="list">
+  <li>
+    <h2 class="list-title" *ngIf="!getReminders().length">У вас нет напоминаний</h2>
+  </li>
+  <li
+    class="list-item"
+    *ngFor="let reminder of getReminders()"
+  >
+    <p class="title">{{ reminder.note }} (Отображается ID, был бы бэкэнд, отображалось бы название заметки)</p>
+    <p class="description">{{ reminder.datetime }}</p>
+    <div></div>
+  </li>
+</ul>

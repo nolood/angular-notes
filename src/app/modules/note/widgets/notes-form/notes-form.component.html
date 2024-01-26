@@ -1,0 +1,17 @@
+<form class="form" (submit)="addNote($event)">
+  <app-text-field
+    [value]="title"
+    (onChange)="setTitle($event)"
+    label="Заголовок"
+    name="title"
+  ></app-text-field>
+<!-- Предпочтительнее использовать text-area -->
+  <app-text-field
+    [value]="description"
+    (onChange)="setDescription($event)"
+    label="Описание"
+    name="description"
+  ></app-text-field>
+
+  <app-button type="submit">Создать</app-button>
+</form>

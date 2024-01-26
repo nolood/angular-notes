@@ -1,0 +1,11 @@
+<div>
+  <label class="label" [for]="name">
+    <p>{{ label }}</p>
+    <input
+      [value]="value || null"
+      (input)="onInputChange($event)"
+      [id]="name"
+      type="text"
+      class="text-field">
+  </label>
+</div>

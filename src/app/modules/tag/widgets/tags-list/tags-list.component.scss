@@ -1,0 +1,28 @@
+@import "../../../../shared/styles/variables";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 20px;
+  height: 500px;
+  border: 1px solid $accent;
+  list-style: none;
+  overflow-y: auto;
+}
+
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid $accent;
+  color: $accent;
+}
+
+.list-title {
+  color: $accent;
+  text-align: center;
+}

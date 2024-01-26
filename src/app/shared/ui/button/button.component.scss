@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.btn {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  outline: 1px solid $accent;
+  color: $accent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    outline-color: $accent-light;
+  }
+
+  &:active {
+    background-color: $accent;
+    outline-color: $accent;
+    color: white;
+  }
+}

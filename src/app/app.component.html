@@ -4,5 +4,7 @@
     (onIndexChange)="setActiveTab($event)"
     [activeIndex]="activeTab"
   ></app-tabs>
-  <app-notes-list *ngIf="activeTab === 0"></app-notes-list>
+  <app-notes *ngIf="activeTab === 0"></app-notes>
+  <app-reminders *ngIf="activeTab === 1" ></app-reminders>
+  <app-tags *ngIf="activeTab === 2"></app-tags>
 </div>
