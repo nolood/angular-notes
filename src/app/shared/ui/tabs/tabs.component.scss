@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.list-item {
+  padding: 10px 20px;
+  border: 1px solid $accent;
+  color: $accent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  &:hover {
+    border-color: $accent-light;
+  }
+  &:active {
+    border-color: $accent-dark;
+  }
+  &.active {
+    background-color: $accent;
+    color: white;
+  }
+}
